@@ -28,7 +28,7 @@ for page_no in range(1,(page_no+1)):
 		info_detail_href = item.select("div.desc a")[0].get("href")
 		info_time = item.select("div.author time.timeago")[0].get_text()
 		file.writelines(str(index) + "," +info_title+ "," +info_time+"\n" +"\n")
-		print(title)
+		print(info_title)
 		r_detail = requests.get(info_detail_href,headers=reqheaders)
 		soup_detail = BeautifulSoup(r_detail.content,"html.parser")
 		try:
