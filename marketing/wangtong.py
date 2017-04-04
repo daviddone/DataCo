@@ -20,7 +20,8 @@ for page_no in range(1,(page_no+1)):
 	site_url ='http://www.ufoer.com/page/'+str(page_no)
 	r = requests.get(site_url,headers=reqheaders)
 	soup = BeautifulSoup(r.content,"html.parser")
-	info_list = soup.select("div.article-list")
+	info_list = soup.select("article.excerpt.ias_excerpt")
+	print(len(info_list))
 	for item in info_list:
 		info_title = item.select("div.desc a.title.info_flow_news_title")[0].get_text()
 		info_time = item.select("div.author time.timeago")[0].get_text()
