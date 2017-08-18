@@ -47,6 +47,8 @@ html = '''
 #print(html)
 selector = etree.HTML(html)
 title_list = selector.xpath('//span/text()')
-
+time_list = selector.xpath('//span[@class="fr color99"]/text()')   # //代表所有的节点  /代表根节点
 for each in title_list:
     print(each)
+for item in time_list:
+	print(item)
