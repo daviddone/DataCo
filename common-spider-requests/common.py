@@ -4,10 +4,9 @@ import requests
 import time
 import site_info
 import datetime
-
 import uuid
-import configparser
 import config_info
+
 # import io
 # import sys
 # sys.stdout = io.TextIOWrapper(sys.stdout.buffer,encoding='gb18030')
