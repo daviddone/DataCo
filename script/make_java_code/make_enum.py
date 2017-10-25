@@ -5,7 +5,9 @@ f2.writelines("public enum IndexEsrvcc {\n")
 f3.writelines("public class Test {\n")
 count = 0
 for line in open(r"source.txt",encoding= 'utf-8'):
-        lists = line.strip().split(",")
+        if len(line.replace(" ","").strip()) <1:
+            continue
+        lists = line.strip().replace(" ","").split(",")
         for item in lists:
             new_item = item.upper() + "("+str(count)+")"+","
             print(item.upper())
